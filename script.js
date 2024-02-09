@@ -7,7 +7,7 @@ function saveContent() {
     });
 }
 
-// Load saved content from local storage
+// Load saved content from local storage and add click listener
 function loadContent() {
     document.querySelectorAll('textarea').forEach(textarea => {
         const id = textarea.id;
@@ -15,7 +15,21 @@ function loadContent() {
         if (savedValue) {
             textarea.value = savedValue; // Set textarea content to saved value
         }
+        // Attach click event listener to clear content on first click
+        textarea.addEventListener('click', clearOnFirstClick);
     });
+}
+
+// Clear content on first click
+function clearOnFirstClick(event) {
+    const textarea = event.target;
+    // Check if this is the first click using a custom attribute
+    if (!textarea.getAttribute('data-first-clicked')) {
+        textarea.value = ''; // Clear the content
+        textarea.setAttribute('data-first-clicked', 'true'); // Set the flag
+        // Remove the listener if you want the clearing to happen only on the first click
+        textarea.removeEventListener('click', clearOnFirstClick);
+    }
 }
 
 // Add event listeners to textareas for saving content on input
