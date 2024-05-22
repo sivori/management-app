@@ -30,3 +30,16 @@ textarea {
     margin-bottom: 10px;
     font-size: 15px;
 }
+
+.tab {
+    display: none;
+}
+
+.tab-button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background-color: #ddd;
+}
