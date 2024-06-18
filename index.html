@@ -28,48 +28,11 @@
     </div>
     <div id="pomodoro">
         <button id="startTimer">🍅Start Pomodoro</button>
+        <button id="resetTimer" onclick="resetTimer()">Reset</button>
         <div id="timerDisplay">25:00</div>
         <div id="countDisplay">Completed: 0</div>
     </div> 
     </div> 
-      
-<script>
-document.getElementById('startTimer').addEventListener('click', function() {
-    var duration = 25 * 60; // 25 minutes in seconds
-    var display = document.getElementById('timerDisplay');
-    var timer = duration, minutes, seconds;
-
-    // Initialize or retrieve the count from session storage
-    var count = sessionStorage.getItem('timerCount') ? parseInt(sessionStorage.getItem('timerCount'), 10) : 0;
-
-    var interval = setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            clearInterval(interval);
-            alert('Timer finished!');
-
-            // Increment the count and update session storage
-            count++;
-            sessionStorage.setItem('timerCount', count.toString());
-        }
-    }, 1000);
-});
-// Function to update the display with the current count
-function updateCountDisplay() {
-    var count = sessionStorage.getItem('timerCount') ? parseInt(sessionStorage.getItem('timerCount'), 10) : 0;
-    document.getElementById('countDisplay').textContent = 'Count: ' + count;
-}
-
-// Call the function to update the display when the page loads
-updateCountDisplay();
-</script>
  <script src="script.js"></script>
 </body>
 </html>
