@@ -36,6 +36,7 @@ textarea {
     color: #fff;
     width: 100%;
     padding: 10px;
+    max-height: 20px;
 }
 
 #pomodoro div {
@@ -49,6 +50,18 @@ textarea {
 
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-content, .side-content {
+    flex: 1;
+}
+
+.main-content {
+    padding-right: 20px;
+}
+
+.side-content {
+    padding-left: 20px;
 }

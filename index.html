@@ -8,31 +8,36 @@
 </head>
 <body>
     <div class="container">
-    <div class="quadrants">
-        <div class="quadrant" id="quadrant1">
-            <label for="text1">Today's Todos</label>
-            <textarea id="text1">List today's tasks.</textarea>
-        </div>
-        <div class="quadrant" id="quadrant2">
-            <label for="text2">Who should I praise?</label>
-            <textarea id="text2">List people to be praised and the subject.</textarea>
-        </div>
-        <div class="quadrant" id="quadrant3">
-            <label for="text3">What shouldn't I get?</label>
-            <textarea id="text3">What tasks should have been delegated differently?</textarea>
-        </div>
-        <div class="quadrant" id="quadrant4">
-            <label for="text4">Who should I counsel?</label>
-            <textarea id="text4">List people to follow up with helpful counsel or correction.</textarea>
+    <div class="main-content">    
+        <div class="quadrants">
+            <div class="quadrant" id="quadrant1">
+                <label for="text1">Today's Todos</label>
+                <textarea id="text1">List today's tasks.</textarea>
+            </div>
+            <div class="quadrant" id="quadrant2">
+                <label for="text2">Who should I praise?</label>
+                <textarea id="text2">List people to be praised and the subject.</textarea>
+            </div>
+            <div class="quadrant" id="quadrant3">
+                <label for="text3">What shouldn't I get?</label>
+                <textarea id="text3">What tasks should have been delegated differently?</textarea>
+            </div>
+            <div class="quadrant" id="quadrant4">
+                <label for="text4">Who should I counsel?</label>
+                <textarea id="text4">List people to follow up with helpful counsel or correction.</textarea>
+            </div>
         </div>
     </div>
-    <div id="pomodoro">
-        <button id="startTimer">🍅Start Pomodoro</button>
-        <button id="resetTimer" onclick="resetTimer()">Reset</button>
-        <div id="timerDisplay">25:00</div>
-        <div id="countDisplay">Completed: 0</div>
-    </div> 
-    </div> 
+    <div class="side-content"></div>
+        <div id="pomodoro">
+            <button id="startTimer">🍅Start Pomodoro</button>
+            <button id="resetTimer" onclick="resetTimer()">Reset</button>
+            <div id="timerDisplay">25:00</div>
+            <div id="countDisplay">Completed: 0</div>
+        </div>
+        <div><a href="x-apple-reminderkit://">Open Reminders</a>  </div>
+    </div>    
+    </div>
  <script src="script.js"></script>
 </body>
 </html>
