@@ -101,19 +101,32 @@ function resetTimer() {
     display.textContent = minutes + ":" + seconds; // Update display
     // Do not restart the countdown here
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('dayCompleteToggle');
     const dayStatus = localStorage.getItem('dayComplete') === 'true';
 
-    // Update button text based on the stored status
-    toggleButton.textContent = dayStatus ? 'Day Marked as Complete' : 'Mark Day as Complete';
+    // Update button class based on the stored status
+    if (dayStatus) {
+        toggleButton.classList.add('day-complete');
+        toggleButton.textContent = 'Complete';
+    } else {
+        toggleButton.classList.remove('day-complete');
+        toggleButton.textContent = 'Incomplete';
+    }
 
     // Add click event listener to the toggle button
     toggleButton.addEventListener('click', function() {
         const isComplete = localStorage.getItem('dayComplete') === 'true';
         // Toggle the completion status
         localStorage.setItem('dayComplete', !isComplete);
-        // Update button text based on the new status
-        toggleButton.textContent = !isComplete ? 'Day Marked as Complete' : 'Mark Day as Complete';
+        // Update button class and text based on the new status
+        if (!isComplete) {
+            toggleButton.classList.add('day-complete');
+            toggleButton.textContent = 'Complete';
+        } else {
+            toggleButton.classList.remove('day-complete');
+            toggleButton.textContent = 'Incomplete';
+        }
     });
 });

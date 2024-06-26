@@ -69,3 +69,19 @@ textarea {
 .app-links {
     padding: 10px;
 }
+
+/* Default button style */
+#dayCompleteToggle {
+    background-color: white;
+    color: black;
+    border: 2px solid black; /* Adjust border color as needed */
+    width: 90px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    cursor: pointer;
+}
+
+/* Style for when the day is marked as complete */
+.day-complete {
+    background-color: green !important; 
+    color: white !important;
+}
